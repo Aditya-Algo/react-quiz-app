@@ -6,10 +6,12 @@ import Login from './pages/Login';
 import Quiz from './pages/Quiz';
 import Result from './pages/Result';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {AuthProvider} from "../contexts/AuthContext";
 
 function App() {
   return (
     <Router>
+      <AuthProvider>
       <Layout>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -19,6 +21,7 @@ function App() {
           <Route exact path="/result" element={<Result />} />
         </Routes>
       </Layout>
+      </AuthProvider>
     </Router>
   );
 }
