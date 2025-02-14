@@ -22,8 +22,8 @@ function App() {
             <Route path="/login" element={<PublicRoute element={<Login />} restricted={true} />} />
 
             {/* Private Routes */}
-            <Route path="/quiz" element={<PrivateRoute element={<Quiz />} />} />
-            <Route path="/result" element={<PrivateRoute element={<Result />} />} />
+            <Route path="/quiz/:id" element={<PrivateRoute element={<Quiz />} />} />
+            <Route path="/result/:id" element={<PrivateRoute element={<Result />} />} />
           </Routes>
         </Layout>
       </AuthProvider>
