@@ -1,7 +1,7 @@
 import { getDatabase, ref, set } from "firebase/database";
 import _ from "lodash";
 import { useEffect, useReducer, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import useQuestions from "../../hooks/useQuestions";
 import Answers from "../Answers";
@@ -37,7 +37,10 @@ export default function Quiz() {
 
   const [qna, dispatch] = useReducer(reducer, initialState);
   const { currentUser } = useAuth();
-  const navigate = useNavigate(); // Correctly using useNavigate for navigation
+  const history = useHistory();
+  const { location } = history;
+  const { state } = location;
+  const { videoTitle } = state;
 
   useEffect(() => {
     dispatch({
@@ -57,14 +60,14 @@ export default function Quiz() {
 
   // handle when user clicks the next button to get the next question
   function nextQuestion() {
-    if (currentQuestion + 1 < Math.min(4, questions.length)) {
+    if (currentQuestion + 1 < questions.length) {
       setCurrentQuestion((prevCurrent) => prevCurrent + 1);
     }
   }
 
   // handle when user clicks the prev button to get back to the previous question
   function prevQuestion() {
-    if (currentQuestion > 0) {
+    if (currentQuestion >= 1 && currentQuestion <= questions.length) {
       setCurrentQuestion((prevCurrent) => prevCurrent - 1);
     }
   }
@@ -80,8 +83,8 @@ export default function Quiz() {
       [id]: qna,
     });
 
-    // Navigate to result page after submitting the quiz
-    navigate(`/result/${id}`, {
+    history.push({
+      pathname: `/result/${id}`,
       state: {
         qna,
       },
@@ -90,7 +93,7 @@ export default function Quiz() {
 
   // calculate percentage of progress
   const percentage =
-    questions.length > 0 ? ((currentQuestion + 1) / Math.min(4, questions.length)) * 100 : 0;
+    questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
 
   return (
     <>
@@ -100,10 +103,8 @@ export default function Quiz() {
         <>
           <h1>{qna[currentQuestion].title}</h1>
           <h4>Question can have multiple answers</h4>
-          <h4>
-            Question {currentQuestion + 1} of {Math.min(4, questions.length)}
-          </h4>
           <Answers
+            input
             options={qna[currentQuestion].options}
             handleChange={handleAnswerChange}
           />
@@ -113,7 +114,7 @@ export default function Quiz() {
             submit={submit}
             progress={percentage}
           />
-          <MiniPlayer />
+          <MiniPlayer id={id} title={videoTitle} />
         </>
       )}
     </>

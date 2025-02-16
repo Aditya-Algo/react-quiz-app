@@ -1,9 +1,0 @@
-{
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": [
-      "source.fixAll.eslint",
-      "source.organizeImports"
-    ],
-    "javascript.validate.enable": false,
-    "typescript.validate.enable": false
-  }  

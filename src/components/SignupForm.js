@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import Button from "./Button";
 import Checkbox from "./Checkbox";
@@ -11,37 +11,30 @@ export default function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [agree, setAgree] = useState(false); // Set this to boolean
+  const [agree, setAgree] = useState("");
 
   const [error, setError] = useState();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState();
 
   const { signup } = useAuth();
-  const navigate = useNavigate(); // Change history to navigate
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
-
-    // Do validation
+    // do validation
     if (password !== confirmPassword) {
       return setError("Passwords don't match!");
     }
 
-    if (!agree) {
-      return setError("You must agree to the terms & conditions.");
-    }
-
     try {
-      setError(""); // Reset any previous errors
-      setLoading(true); // Start loading state
-
-      await signup(email, password, username); // Attempt to sign up
-      navigate("/"); // Redirect to home page on success
-
+      setError("");
+      setLoading(true);
+      await signup(email, password, username);
+      history.push("/");
     } catch (err) {
       console.log(err);
-      setLoading(false); // Stop loading state
-      setError("Failed to create an account!"); // Display error message
+      setLoading(false);
+      setError("Failed to create an account!");
     }
   }
 
@@ -86,8 +79,8 @@ export default function SignupForm() {
       <Checkbox
         required
         text="I agree to the Terms &amp; Conditions"
-        checked={agree} // Use checked instead of value
-        onChange={(e) => setAgree(e.target.checked)} // Set checked state
+        value={agree}
+        onChange={(e) => setAgree(e.target.value)}
       />
 
       <Button disabled={loading} type="submit">

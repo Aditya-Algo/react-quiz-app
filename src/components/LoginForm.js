@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import Button from "./Button";
 import Form from "./Form";
@@ -10,26 +10,23 @@ export default function LoginForm() {
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState();
 
   const { login } = useAuth();
-  const navigate = useNavigate(); // Using useNavigate here for navigation
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      setError(""); // Clear any previous errors
-      setLoading(true); // Start loading state
-      await login(email, password); // Attempt to log the user in
-
-      // If login is successful, navigate to the home page
-      navigate("/");
-
+      setError("");
+      setLoading(true);
+      await login(email, password);
+      history.push("/");
     } catch (err) {
-      console.error(err); // Log any error for debugging
-      setLoading(false); // Stop the loading state
-      setError("Failed to login!"); // Show error message
+      console.log(err);
+      setLoading(false);
+      setError("Failed to login!");
     }
   }
 

@@ -1,14 +1,12 @@
-import { Navigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { Redirect, Route } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
-export default function PrivateRoute({ element, ...rest }) {
+export default function PrivateRoute({ component: Component, ...rest }) {
   const { currentUser } = useAuth();
 
-  // If user is not authenticated, redirect to login
-  if (!currentUser) {
-    return <Navigate to="/login" />;
-  }
-
-  // If authenticated, render the protected component
-  return element;
+  return currentUser ? (
+    <Route {...rest}>{(props) => <Component {...props} />}</Route>
+  ) : (
+    <Redirect to="/login" />
+  );
 }
