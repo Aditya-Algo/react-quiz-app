@@ -11,38 +11,38 @@
       "noq": 4
     },
     "3": {
-      "youtubeID": "WC-g0JtEIwM",
-      "title": "#1 - Node.js নিয়ে একটি ছোট্ট গল্প - Node.js Tutorial Bangla | Express.js Tutorial Bangla",
+      "youtubeID": "zaLfOjNEOaQ",
+      "title": "#1 Node.js Tutorial | Express.js Tutorial",
       "noq": 4
     },
     "4": {
-      "youtubeID": "CHnTTzD1pAQ",
-      "title": "Lesson 1 - Introduction & Installation - TypeScript Bangla ( বাংলা ) Tutorial Series",
+      "youtubeID": "kvm8tsRj6BM",
+      "title": "Lesson 1 - Introduction & Installation - TypeScript Tutorial Series",
       "noq": 4
     },
     "5": {
       "youtubeID": "PHy8h0BixKA",
-      "title": "#02 JavaScript Bangla Tutorial | JavaScript Output",
+      "title": "#02 JavaScript Tutorial | JavaScript Output",
       "noq": 4
     },
     "6": {
       "youtubeID": "2C5834qx0sA",
-      "title": "#2 React Virtual DOM Explained - Easy Explanation - React Tutorial Bangla Series",
+      "title": "#2 React Virtual DOM Explained - Easy Explanation - React Tutorial Series",
       "noq": 4
     },
     "7": {
       "youtubeID": "qImH1bFubW4",
-      "title": "#2 - Node.js কি & কিভাবে কাজ করে? - Node.js Tutorial Bangla | Bangla Node js Tutorial",
+      "title": "#2 Node.js Tutorial",
       "noq": 0
     },
     "8": {
       "youtubeID": "47PASjEF5fo",
-      "title": "Lesson 2 - Editor Setup & Compilation - TypeScript Bangla ( বাংলা ) Tutorial Series",
+      "title": "Lesson 2 - Editor Setup & Compilation - TypeScript Tutorial Series",
       "noq": 0
     },
     "9": {
       "youtubeID": "vXHefJiJM24",
-      "title": "#03 JavaScript Bangla Tutorial | JavaScript Statement",
+      "title": "#03 JavaScript Tutorial | JavaScript Statement",
       "noq": 0
     },
     "10": {
@@ -52,37 +52,37 @@
     },
     "11": {
       "youtubeID": "J5sCarsKX1s",
-      "title": "#3 - Node.js Installation - VS Code Editor Setup - Node.js Tutorial Bangla",
+      "title": "#3 - Node.js Installation - VS Code Editor Setup - Node.js Tutorial",
       "noq": 0
     },
     "12": {
       "youtubeID": "zPxvFjNQN20",
-      "title": "Lesson 3 - Type Basics - TypeScript Bangla ( বাংলা ) Tutorial Series",
+      "title": "Lesson 3 - Type Basics - TypeScript Tutorial Series",
       "noq": 0
     },
     "13": {
       "youtubeID": "xWujZw0yIqg",
-      "title": "#04 JavaScript Bangla Tutorial | JavaScript Syntax",
+      "title": "#04 JavaScript Tutorial | JavaScript Syntax",
       "noq": 0
     },
     "14": {
       "youtubeID": "-oGMwOOHFyk",
-      "title": "#4 React Prerequisites - React শিখতে কি কি জানা প্রয়োজন - React Tutorial Bangla Series",
+      "title": "#4 React Prerequisites - React Tutorial",
       "noq": 0
     },
     "15": {
       "youtubeID": "IFBeIUX3J8M",
-      "title": "#4 Node.js Global Object & Module System - Node.js Tutorial Bangla | Bangla Node js Tutorial",
+      "title": "#4 Node.js Global Object & Module System",
       "noq": 0
     },
     "16": {
       "youtubeID": "fIQQNQ7DaV8",
-      "title": "Lesson 4 - Explicit & Union Types - TypeScript Bangla ( বাংলা ) Tutorial Series",
+      "title": "Lesson 4 - Explicit & Union Types - TypeScript Bangla Tutorial Series",
       "noq": 0
     },
     "17": {
       "youtubeID": "bH-xZqvPk8A",
-      "title": "#05 JavaScript Bangla Tutorial | JavaScript Comments",
+      "title": "#05 JavaScript Tutorial | JavaScript Comments",
       "noq": 0
     },
     "18": {
@@ -450,7 +450,7 @@
         }
       ]
     },
-    "WC-g0JtEIwM": {
+    "zaLfOjNEOaQ": {
       "questions": [
         {
           "title": "How to declare JavaScript variables?",
@@ -594,7 +594,7 @@
         }
       ]
     },
-    "CHnTTzD1pAQ": {
+    "kvm8tsRj6BM": {
       "questions": [
         {
           "title": "How to declare JavaScript variables?",
@@ -1474,7 +1474,7 @@
         }
       ]
     },
-    "WC-g0JtEIwM": {
+    "zaLfOjNEOaQ": {
       "questions": [
         {
           "title": "How to declare JavaScript variables?",
@@ -1625,7 +1625,7 @@
         }
       ]
     },
-    "CHnTTzD1pAQ": {
+    "kvm8tsRj6BM": {
       "questions": [
         {
           "title": "How to declare JavaScript variables?",
